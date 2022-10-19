@@ -1,9 +1,25 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-{% block head %}
-{% endblock %}
+<div class="container">
+  <h1>Home</h1>
+  <a method="GET" href ="{{ url_for('parts') }}" role="button" class="btn btn-primary btn-lg active">Check all parts</a>
+  <a method="GET" href ="{{ url_for('po') }}" role="button" class="btn btn-primary btn-lg active">Submit a PO</a>
+  <a method="GET" href ="{{ url_for('poList') }}" role="button" class="btn btn-primary btn-lg active">Look up your PO</a>
+  <a method="GET" href ="{{ url_for('line') }}" role="button" class="btn btn-primary btn-lg active">Look up your Line</a>
 
-{% block body %}
-<h1>Template</h1>
-<div>This is a div</div>
-{% endblock %}
+  
+  
+</div>
+
+</body>
+</html> 

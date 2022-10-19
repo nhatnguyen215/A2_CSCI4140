@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Purchase Order</h1>
+    <a href ="{{ url_for('index') }}" role="button" class="btn btn-primary btn-lg active">Back to Home</a>
+
+    <form method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Client ID</label>
+          <input name="clientID" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Client ID">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>    
+    
+    <table class = "table">
+      <thead>
+        <tr>
+          <th scope="col">PO number</th>
+          <th scope="col">Client Comp ID</th>
+          <th scope="col">Date of PO</th>
+          <th scope="col">Status</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in data %}
+      <tr>
+      <td>{{row.0}}</td>
+      <td>{{row.1}}</td>
+      <td>{{row.2}}</td>
+      <td>{{row.3}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+</div>
+
+</body>
+</html> 

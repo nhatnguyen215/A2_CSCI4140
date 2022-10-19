@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Purchase Order</h1>
+    <a href ="{{ url_for('index') }}" role="button" class="btn btn-primary btn-lg active">Back to Home</a>
+    <form method="POST" action="{{ url_for('po') }}">
+        <div class="form-group">
+          <label for="compID">Your Comp ID</label>
+          <input name="compID" type="text" class="form-control" id="compID" placeholder="Enter Comp ID">
+        </div>
+        <div class="form-group">
+            <label for="clientID">Your Client ID</label>
+            <input name="clientID" type="text" class="form-control" id="clientID" placeholder="Enter Client ID">
+        </div>
+        <div class="form-group">
+          <label for="partNo">Part No</label>
+          <input name="partNo" type="text" class="form-control" id="partNo" placeholder="Part Number">
+        </div>
+        <div class="form-group">
+            <label for="qty">Quantity</label>
+            <input name="qty" type="text" class="form-control" id="qty" placeholder="Quantity">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>    
+  
+</div>
+
+</body>
+</html> 
